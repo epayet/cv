@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{moderncv}
+%\moderncvtheme[blue]{classic}
+\moderncvtheme[black]{banking}
+
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[top=1.0cm, bottom=1.0cm, left=2cm, right=2cm]{geometry}
+ 
+%\usepackage[french]{babel}     % prend en charge les spécificités du français
+ 
+\usepackage{lmodern}           % charge les polices LatinModern appropriées pour un rendu PDF
+
+\setlength{\hintscolumnwidth}{2.5cm}
+
+\usepackage{datenumber,fp}
+
+\newcounter{dateofbirth}
+\newcounter{dateoftoday}
+
+\setmydatenumber{dateofbirth}{1992}{10}{15}
+\setmydatenumber{dateoftoday}{\the\year}{\the\month}{\the\day}
+\FPsub\result{\thedateoftoday}{\thedateofbirth}
+\FPdiv\myage{\result}{365.2425}
+
+\firstname{Emmanuel}
+\familyname{Payet}
+%\title{Software Engineer}
+\address{International Hall}{Lansdowne Terrace}{WC1N 1AS, London}
+\email{contact@emmanuel-payet.me}
+\social[github]{epayet}
+\mobile{07999 444104}
+%\extrainfo{\FPtrunc\myage{\myage}{0}\myage\ ans --- permis b}
+%\photo[64pt][0.4pt]{photo}
+\begin{document}
+\makecvtitle%
+
+\section{Personal Statement}
+\cvline{}{TODO}
+
+\section{Employment}
+\cventry{2013--2015}{développeur}{systonic}{pessac}{keepalert \& prodomaines}{réalisation de nombreux projets\@:
+\begin{itemize}
+    \item rédaction d'un article pour programmez! (\textnumero170--171) sur l'utilisation des annotations et de l'introspection en java,
+    \item développement d'une solution basée sur de l'ocr,
+    \item modernisation des outils utilisés par l'équipe de développement (git, maven, jenkins),
+    \item migration de la plateforme keepalert dans le cloud d'amazon (hadoop, elasticsearch),
+    \item mise en place de système d'intégration continue basé sur jenkins,
+    \item développement d'api restful pour les extranets keepalert \& prodomaines,
+    \item début de moteur de recherche d'image (cbir),
+    \item création d'un langage de script pour le web-scraping
+\end{itemize}
+}
+\cventry{2012--7 sem.}{développeur web}{goûts de web}{bordeaux}{}{développement d'un site web de petites annonces --- \url{marseille-culture13.fr}}
+\cventry{2010--7 sem.}{développeur}{epsi bordeaux}{}{}{développement d'une application de gestion des absences et des notes pour les enseignants}
+
+\section{Education}
+\cventry{2012--2015}{cycle d'ingénierie informatique}{epsi bordeaux}{}{}{option génie logiciel}
+\cventry{2012}{bts informatique de gestion}{epsi bordeaux}{}{}{option développeur d'applications}
+\cvitemwithcomment{anglais}{documentation technique, lu, écrit, toeic}{bonne compréhension à l'écrit}
+
+\section{Skills}
+\cvitem{c}{sdl, libssh2, gtk, liblua, argp}
+\cvitem{python}{version 3, pyqt, tk, opencv}
+\cvitem{c++14}{qt4/5, boost, sfml, ogre3d, bullet physics, box2d, mysql++, tinyxml, rapidxml, gsoap, fmodex, tolua++, cegui, opencv, google protobuf}
+\cvitem{java}{version 8, swing, spring, hibernate, jackson, liquibase, jersey, spring, hadoop, dropwizard, jruby, junit, mockito, jcommander}
+\cvitem{autres}{web, ecmascript 5 et 6, html, css, rest, soap, oauth2, json, xml, ajax, angularjs, pixi.js, merise, uml, sql, php5, symfony 1\&2}
+\cvitem{cloud aws}{ec2, cloudformation, s3, iam, emr, ebs, opswork, sns, cloudwatch}
+\cvitem{logiciels}{vim (neovim), eclipse, webstorm, intellij idea, make, gcc, clang, gulp, maven, nodejs, phantomjs, qtcreator, clion, kdevelop, git, cmake, gdb, valgrind, docker, latex, pandoc, elasticsearch, mysql, ssh, libreoffice, jenkins, sonarqube, sonatype nexus, gitlab, npm, bower, bash, zsh}
+\cvitem{systèmes d'exploitation}{gentoo \& funtoo, archlinux, debian, fedora, mandriva, centos, ubuntu, microsoft windows}
+
+\section{Interests}
+\cvitem{sports}{pratique régulièrement planche à voile, vtt, vélo, escalade en club, randonnée}
+\cvitem{lectures}{veille technologique, romans d'heroic fantasy, ouvrages informatiques}
+
+%examples
+\cvlanguage{Language 1}{Skill level}{Comment}
+\cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+\cvline{hobby 1}{\small Description}
+
+\end{document}
+
