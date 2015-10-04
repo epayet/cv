@@ -1,6 +1,6 @@
 \documentclass[11pt,a4paper]{moderncv}
-%\moderncvtheme[blue]{classic}
-\moderncvtheme[black]{banking}
+\moderncvtheme[blue]{classic}
+%\moderncvtheme[black]{banking}
 
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -31,51 +31,95 @@
 \mobile{07999 444104}
 %\extrainfo{\FPtrunc\myage{\myage}{0}\myage\ ans --- permis b}
 %\photo[64pt][0.4pt]{photo}
+
 \begin{document}
 \makecvtitle%
 
 \section{Personal Statement}
-\cvline{}{TODO}
+%\cventry{}{}{}{}{}{
+%\cvline{}{
+    Experimented software engineer specialized in web technologies, looking for a challenging job in London to develop my technical skills. 
+%\smallskip
+\medskip \newline
+    Rigorous and enthusiast programmer who can always be trusted to come up with a new approach. 
+    I use as much as possible agile methodologies in my work and personal projects. 
+    Productivity is fundamental to me, and I set my toolbox in consequence. 
+    I'm capable of handling every step of a project, but I also work well in a team. 
+%\smallskip
+\medskip \newline
+    During my free time, I study new technologies on many subjects. All of this makes me someone who tries to find the most effective solutions to computing problems.
+%} 
+
+% here are some of my skills, but don't get fooled, my best capacity is my adaptability
 
 \section{Employment}
-\cventry{2013--2015}{développeur}{systonic}{pessac}{keepalert \& prodomaines}{réalisation de nombreux projets\@:
-\begin{itemize}
-    \item rédaction d'un article pour programmez! (\textnumero170--171) sur l'utilisation des annotations et de l'introspection en java,
-    \item développement d'une solution basée sur de l'ocr,
-    \item modernisation des outils utilisés par l'équipe de développement (git, maven, jenkins),
-    \item migration de la plateforme keepalert dans le cloud d'amazon (hadoop, elasticsearch),
-    \item mise en place de système d'intégration continue basé sur jenkins,
-    \item développement d'api restful pour les extranets keepalert \& prodomaines,
-    \item début de moteur de recherche d'image (cbir),
-    \item création d'un langage de script pour le web-scraping
-\end{itemize}
+\cventry{2013--2015}{Software Engineer - Dual education}{Cdiscount}{Bordeaux, France}{}{
+    Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. \\
+    Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). \\
+    Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). \\
+    Started migration to microservices. \\
+    Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). \\
+    Trained a junior developer. \\
+    Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
 }
-\cventry{2012--7 sem.}{développeur web}{goûts de web}{bordeaux}{}{développement d'un site web de petites annonces --- \url{marseille-culture13.fr}}
-\cventry{2010--7 sem.}{développeur}{epsi bordeaux}{}{}{développement d'une application de gestion des absences et des notes pour les enseignants}
+
+\cventry{Summer 2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
+    Sonar integration in the continuous integration process (Jenkins) \\
+    Worked on the core architecture of the project BidRight (Java) \\
+    Created a RESTful API (Java / Jersey) \\
+    Created a scraping web app (Python / Django)
+}
+
+\cventry{2012--2013}{Software Developer - Dual Education}{Cdiscount}{Bordeaux, France}{}{
+    Developed in the web services team on different projects. \\
+    Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. \\
+    Languages: C\#, SQL Server, Silverlight
+}
+
+\cventry{2012--3 Months}{Web Developer - Internship}{Ecobox}{Bordeaux, France}{}{
+    Developed a Google Map module for Dynmap (cartography software) \\
+    Languages: PHP/MySQL, JavaScript/AJAX
+}
 
 \section{Education}
-\cventry{2012--2015}{cycle d'ingénierie informatique}{epsi bordeaux}{}{}{option génie logiciel}
-\cventry{2012}{bts informatique de gestion}{epsi bordeaux}{}{}{option développeur d'applications}
-\cvitemwithcomment{anglais}{documentation technique, lu, écrit, toeic}{bonne compréhension à l'écrit}
+\cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
+    Computer Science Engineering Top School, Master's degree \\
+    Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
+}
+
+\cventry{2007--2010}{Trois Mares High School}{}{}{Reunion Island}{
+    High School diploma (French baccalauréat), Science, Engineering Science, with honours \\
+    French equivalent to A Levels
+}
 
 \section{Skills}
-\cvitem{c}{sdl, libssh2, gtk, liblua, argp}
-\cvitem{python}{version 3, pyqt, tk, opencv}
-\cvitem{c++14}{qt4/5, boost, sfml, ogre3d, bullet physics, box2d, mysql++, tinyxml, rapidxml, gsoap, fmodex, tolua++, cegui, opencv, google protobuf}
-\cvitem{java}{version 8, swing, spring, hibernate, jackson, liquibase, jersey, spring, hadoop, dropwizard, jruby, junit, mockito, jcommander}
-\cvitem{autres}{web, ecmascript 5 et 6, html, css, rest, soap, oauth2, json, xml, ajax, angularjs, pixi.js, merise, uml, sql, php5, symfony 1\&2}
-\cvitem{cloud aws}{ec2, cloudformation, s3, iam, emr, ebs, opswork, sns, cloudwatch}
-\cvitem{logiciels}{vim (neovim), eclipse, webstorm, intellij idea, make, gcc, clang, gulp, maven, nodejs, phantomjs, qtcreator, clion, kdevelop, git, cmake, gdb, valgrind, docker, latex, pandoc, elasticsearch, mysql, ssh, libreoffice, jenkins, sonarqube, sonatype nexus, gitlab, npm, bower, bash, zsh}
-\cvitem{systèmes d'exploitation}{gentoo \& funtoo, archlinux, debian, fedora, mandriva, centos, ubuntu, microsoft windows}
+\cvitem{JavaScript}{ES5 \& ES6, NodeJS, AngularJS, gulp, bower, karma, jasmine, protractor, cordova}
+\cvitem{Java}{Version 8, Maven, Gradle, Jersey, JUnit, Hibernate, Groovy, Spock, Kafka}
+\cvitem{Database}{MongoDB, ElasticSearch, Redis, PostgreSQL, MySQL}
+\cvitem{Operations}{Docker, Jenkins, Heroku, Travis}
+\cvitem{Linux}{Debian, ArchLinux, Ubuntu, Fedora}
+\cvitem{IDE}{IntelliJ Idea \& derivatives, vim}
+\cvitem{Others}{C\#, C/C++, Python, PHP, HTML, CSS, git}
+
+\section{Projects}
+
+\section{Languages}
+\cvitem{French}{Native}
+\cvitem{English}{Full professional proficiency}
 
 \section{Interests}
-\cvitem{sports}{pratique régulièrement planche à voile, vtt, vélo, escalade en club, randonnée}
-\cvitem{lectures}{veille technologique, romans d'heroic fantasy, ouvrages informatiques}
+\cvitem{IT}{new technologies, coding dojos}
+\cvitem{Others}{video games, squash, Japanese animation}
+
+% TODO une liste ou 2 ? new technologies ?
+
+\section{References}
+Available upon request
 
 %examples
-\cvlanguage{Language 1}{Skill level}{Comment}
-\cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvline{hobby 1}{\small Description}
+%\cvlanguage{Language 1}{Skill level}{Comment}
+%\cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+%\cvline{hobby 1}{\small Description}
 
 \end{document}
-
+% TODO polices idem entre \cventry et \cvline ?
