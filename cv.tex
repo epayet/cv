@@ -4,13 +4,36 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
-\usepackage[top=1.0cm, bottom=1.0cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
  
 %\usepackage[french]{babel}     % prend en charge les spécificités du français
  
 \usepackage{lmodern}           % charge les polices LatinModern appropriées pour un rendu PDF
 
 \setlength{\hintscolumnwidth}{2.5cm}
+
+\usepackage{xpatch}
+\usepackage{setspace}
+%\renewcommand{\baselinestretch}{1.5} 
+% Add a vertical space before the description
+\xpatchcmd\cventry
+  {\small}
+  {} % choose what you want
+  {}{}
+
+%\vspace*{3ex}
+% Increase the vertical spacing between the sections
+\makeatletter
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{1cm}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{section}{#2}%
+  \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
+  \hspace{\separatorcolumnwidth}%
+  \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#2}}%
+  \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
+\makeatother
+
 
 \usepackage{datenumber,fp}
 
@@ -24,7 +47,7 @@
 
 \firstname{Emmanuel}
 \familyname{Payet}
-%\title{Software Engineer}
+\title{Software Engineer}
 \address{International Hall}{Lansdowne Terrace}{WC1N 1AS, London}
 \email{contact@emmanuel-payet.me}
 \social[github]{epayet}
@@ -33,11 +56,12 @@
 %\photo[64pt][0.4pt]{photo}
 
 \begin{document}
-\makecvtitle%
+\makecvtitle
+\vspace*{-7mm}
 
 \section{Personal Statement}
 %\cventry{}{}{}{}{}{
-%\cvline{}{
+\cvline{}{
     Experimented software engineer specialized in web technologies, looking for a challenging job in London to develop my technical skills. 
 %\smallskip
 \medskip \newline
@@ -48,44 +72,65 @@
 %\smallskip
 \medskip \newline
     During my free time, I study new technologies on many subjects. All of this makes me someone who tries to find the most effective solutions to computing problems.
-%} 
+} 
 
 % here are some of my skills, but don't get fooled, my best capacity is my adaptability
 
 \section{Employment}
 \cventry{2013--2015}{Software Engineer - Dual education}{Cdiscount}{Bordeaux, France}{}{
-    Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. \\
-    Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). \\
-    Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). \\
-    Started migration to microservices. \\
-    Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). \\
-    Trained a junior developer. \\
+    Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. 
+\smallskip \newline
+    Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). 
+\smallskip \newline
+    Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
+\smallskip \newline
+    Started migration to microservices. 
+\smallskip \newline
+    Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). 
+\smallskip \newline
+    Trained a junior developer. 
+\smallskip \newline
     Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
 }
 
+\bigskip
+
 \cventry{Summer 2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
-    Sonar integration in the continuous integration process (Jenkins) \\
-    Worked on the core architecture of the project BidRight (Java) \\
-    Created a RESTful API (Java / Jersey) \\
+    Sonar integration in the continuous integration process (Jenkins) 
+\smallskip \newline
+    Worked on the core architecture of the project BidRight (Java) 
+\smallskip \newline
+    Created a RESTful API (Java / Jersey) 
+\smallskip \newline
     Created a scraping web app (Python / Django)
 }
 
+\bigskip
+
 \cventry{2012--2013}{Software Developer - Dual Education}{Cdiscount}{Bordeaux, France}{}{
-    Developed in the web services team on different projects. \\
-    Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. \\
+    Developed in the web services team on different projects. 
+\smallskip \newline
+    Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
+\smallskip \newline
     Languages: C\#, SQL Server, Silverlight
+\smallskip \newline
 }
 
+\bigskip
+
 \cventry{2012--3 Months}{Web Developer - Internship}{Ecobox}{Bordeaux, France}{}{
-    Developed a Google Map module for Dynmap (cartography software) \\
+    Developed a Google Map module for Dynmap (cartography software) 
+\smallskip \newline
     Languages: PHP/MySQL, JavaScript/AJAX
 }
 
 \section{Education}
 \cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
-    Computer Science Engineering Top School, Master's degree \\
+    Master's degree, Computer Science Engineering Top School  \\
     Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
 }
+
+\bigskip
 
 \cventry{2007--2010}{Trois Mares High School}{}{}{Reunion Island}{
     High School diploma (French baccalauréat), Science, Engineering Science, with honours \\
@@ -93,23 +138,21 @@
 }
 
 \section{Skills}
-\cvitem{JavaScript}{ES5 \& ES6, NodeJS, AngularJS, gulp, bower, karma, jasmine, protractor, cordova}
+\cvitem{JavaScript}{ES5 \& ES6, NodeJS, AngularJS, Gulp, Bower, Karma, Jasmine, Protractor, Cordova}
 \cvitem{Java}{Version 8, Maven, Gradle, Jersey, JUnit, Hibernate, Groovy, Spock, Kafka}
 \cvitem{Database}{MongoDB, ElasticSearch, Redis, PostgreSQL, MySQL}
 \cvitem{Operations}{Docker, Jenkins, Heroku, Travis}
 \cvitem{Linux}{Debian, ArchLinux, Ubuntu, Fedora}
 \cvitem{IDE}{IntelliJ Idea \& derivatives, vim}
-\cvitem{Others}{C\#, C/C++, Python, PHP, HTML, CSS, git}
-
-\section{Projects}
+\cvitem{Others}{C\#, C/C++, Python, PHP, HTML, CSS, Git}
 
 \section{Languages}
 \cvitem{French}{Native}
 \cvitem{English}{Full professional proficiency}
 
 \section{Interests}
-\cvitem{IT}{new technologies, coding dojos}
-\cvitem{Others}{video games, squash, Japanese animation}
+\cvitem{IT}{New technologies, coding dojos}
+\cvitem{Others}{Video games, squash, Japanese animation}
 
 % TODO une liste ou 2 ? new technologies ?
 
