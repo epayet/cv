@@ -27,7 +27,7 @@
 % Increase the vertical spacing between the sections
 \makeatletter
 \RenewDocumentCommand{\section}{sm}{%
-  \par\addvspace{1cm}%
+  \par\addvspace{0.9cm}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#2}%
   \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
@@ -67,8 +67,7 @@
     Experimented software engineer specialized in web technologies and agile methodology, looking for a challenging job in London to develop my technical skills. 
 \medskip \newline
     Rigorous and enthusiast programmer who can always be trusted to come up with a new approach. 
-    I use as much as possible agile methodologies in my work and personal projects. 
-    Productivity is fundamental to me, and I set my toolbox in consequence. 
+    I use as much as possible agile methodologies in my work and personal projects, because productivity is fundamental to me.
     I'm capable of handling every step of a project, but I also work well in a team. 
 \medskip \newline
     During my free time, I study new technologies on many subjects (web and mobile technologies, docker, microservices, video game development, raspberry pi, etc.), but my best capacity is my adaptability. 
@@ -89,13 +88,13 @@
 \section{Employment}
 \cventry{2013--2015}{Software Engineer - Dual education}{Cdiscount}{Bordeaux, France}{}{
 \begin{itemize} \setlength\itemsep{5pt}
-    \item Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. (\url{https://dev.cdiscount.com})
-    \item Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). 
+    \item Created the developer hub of the Cdiscount openAPI, allowing many developers to manage their applications and use the interactive documentation. Publicly accessible at: \url{https://dev.cdiscount.com}.
+    \item Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases), which improved the team productivity.
     \item Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
     \item Started migration to microservices. 
     \item Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). 
     \item Trained a junior developer. 
-    \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
+    \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, Git, Linux, Bower, Gulp, Karma, Jasmine, Protractor
 \end{itemize}
 }
 
@@ -103,10 +102,11 @@
 
 \cventry{2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
 \begin{itemize} \setlength\itemsep{5pt}
-    \item Sonar integration in the continuous integration process (Jenkins) 
-    \item Worked on the core architecture of the project BidRight (Java) 
-    \item Created a RESTful API (Java / Jersey) 
-    \item Created a scraping web app (Python / Django)
+    \item Integration of SonarQube™ in the continuous integration process to improve the overall code quality
+    \item Refactored a part of the core architecture of the project BidRight. It allows users to monitor advertising revenues on different platforms. 
+    \item Created a RESTful API to ease access to BidRight data using the core architecture I refactored. 
+    \item Created a scraping web app to help keep track of the correct usage of BidRight.
+    \item Technologies: Java, Jenkins, Jersey, Python, Django
 \end{itemize}
 }
 
@@ -116,7 +116,7 @@
 \begin{itemize} \setlength\itemsep{5pt}
     \item Developed in the web services team on different projects. 
     \item Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
-    \item Languages: C\#, SQL Server, Silverlight
+    \item Technologies: C\#, SQL Server, Silverlight
 \end{itemize}
 }
 
@@ -124,8 +124,8 @@
 
 \cventry{2012--3 Months}{Web Developer - Internship}{Ecobox}{Bordeaux, France}{}{
 \begin{itemize} \setlength\itemsep{5pt}
-    \item Developed a Google Map module for Dynmap (cartography software) 
-    \item Languages: PHP/MySQL, JavaScript/AJAX
+    \item Developed a Google Map module for Dynmap (cartography software), adding benefits for users from both cartography softwares. 
+    \item Technologies: PHP/MySQL, JavaScript/AJAX
 \end{itemize}
 }
 
@@ -141,8 +141,8 @@
 
 \cventry{2007--2010}{Trois Mares High School}{}{}{Reunion Island}{
 \begin{itemize} \setlength\itemsep{5pt}
-    \item High School diploma (French baccalauréat), Science, Engineering Science, with honours 
-    \item French equivalent to A Levels
+    \item High School diploma, Science, Engineering Science, with honours 
+    \item French baccalauréat equivalent to A Levels
 \end{itemize}
 }
 
