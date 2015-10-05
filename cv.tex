@@ -5,6 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{lastpage}
+\rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
  
 %\usepackage[french]{babel}     % prend en charge les spécificités du français
  
@@ -156,7 +159,7 @@
 %Available upon request
 \renewcommand{\listitemsymbol}{} % Changes the symbol used for lists
 
-\cvlistdoubleitem{Olivier Abrard}{Grégory Taudin}
+\cvlistdoubleitem{\textbf{Olivier Abrard}}{\textbf{Grégory Taudin}}
 \cvlistdoubleitem{Engineering Manager}{Engineering Manager}
 \cvlistdoubleitem{Former Mentor at Cdiscount}{Former Mentor at Cdiscount}
 \cvlistdoubleitem{\href{mailto:olivier.abrard@gmail.com}{olivier.abrard@gmail.com}}{\href{mailto:gregory.taudin@gmail.com}{gregory.taudin@gmail.com}}
@@ -166,5 +169,4 @@
 %\cvlanguage{Language 1}{Skill level}{Comment}
 %\cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
 %\cvline{hobby 1}{\small Description}
-
 \end{document}

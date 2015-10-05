@@ -3,8 +3,10 @@ ALL: cv.pdf
 cv.pdf: out/cv.pdf
 	cp out/cv.pdf cv.pdf
 
+# Run twice for page numbers
 out/cv.pdf: cv.tex
 	mkdir -p out/
+	pdflatex -output-directory=out cv.tex
 	pdflatex -output-directory=out cv.tex
 
 clean:
