@@ -13,15 +13,14 @@
 \setlength{\hintscolumnwidth}{2.5cm}
 
 \usepackage{xpatch}
-\usepackage{setspace}
-%\renewcommand{\baselinestretch}{1.5} 
+
 % Add a vertical space before the description
 \xpatchcmd\cventry
   {\small}
-  {\vspace*{1pt}} % choose what you want
+  {}
+%  {\vspace*{1pt}} % choose what you want
   {}{}
 
-%\vspace*{3ex}
 % Increase the vertical spacing between the sections
 \makeatletter
 \RenewDocumentCommand{\section}{sm}{%
@@ -34,7 +33,7 @@
   \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
 \makeatother
 
-
+% Personal infos
 \usepackage{datenumber,fp}
 
 \newcounter{dateofbirth}
@@ -63,13 +62,11 @@
 %\cventry{}{}{}{}{}{
 %\cvline{}{
     Experimented software engineer specialized in web technologies, looking for a challenging job in London to develop my technical skills. 
-%\smallskip
 \medskip \newline
     Rigorous and enthusiast programmer who can always be trusted to come up with a new approach. 
     I use as much as possible agile methodologies in my work and personal projects. 
     Productivity is fundamental to me, and I set my toolbox in consequence. 
     I'm capable of handling every step of a project, but I also work well in a team. 
-%\smallskip
 \medskip \newline
     During my free time, I study new technologies on many subjects (web and mobile technologies, docker, microservices, video game development, raspberry pi, etc.), but my best capacity is my adaptability. 
     All of this makes me someone who tries to find the most effective solutions to computing problems.
@@ -78,7 +75,7 @@
 \section{Employment}
 \cventry{2013--2015}{Software Engineer - Dual education}{Cdiscount}{Bordeaux, France}{}{
 \begin{itemize} \setlength\itemsep{5pt}
-    \item Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. (\url{http://dev.cdiscount.com})
+    \item Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. (\url{https://dev.cdiscount.com})
     \item Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). 
     \item Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
     \item Started migration to microservices. 
@@ -87,6 +84,7 @@
     \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
 \end{itemize}
 }
+
 \bigskip
 
 \cventry{2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
