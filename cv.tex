@@ -18,7 +18,7 @@
 % Add a vertical space before the description
 \xpatchcmd\cventry
   {\small}
-  {} % choose what you want
+  {\vspace*{1pt}} % choose what you want
   {}{}
 
 %\vspace*{3ex}
@@ -61,7 +61,7 @@
 
 \section{Personal Statement}
 %\cventry{}{}{}{}{}{
-\cvline{}{
+%\cvline{}{
     Experimented software engineer specialized in web technologies, looking for a challenging job in London to develop my technical skills. 
 %\smallskip
 \medskip \newline
@@ -71,70 +71,67 @@
     I'm capable of handling every step of a project, but I also work well in a team. 
 %\smallskip
 \medskip \newline
-    During my free time, I study new technologies on many subjects. All of this makes me someone who tries to find the most effective solutions to computing problems.
-} 
-
-% here are some of my skills, but don't get fooled, my best capacity is my adaptability
+    During my free time, I study new technologies on many subjects (web and mobile technologies, docker, microservices, video game development, raspberry pi, etc.), but my best capacity is my adaptability. 
+    All of this makes me someone who tries to find the most effective solutions to computing problems.
+%} 
 
 \section{Employment}
 \cventry{2013--2015}{Software Engineer - Dual education}{Cdiscount}{Bordeaux, France}{}{
-    Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. 
-\smallskip \newline
-    Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). 
-\smallskip \newline
-    Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
-\smallskip \newline
-    Started migration to microservices. 
-\smallskip \newline
-    Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). 
-\smallskip \newline
-    Trained a junior developer. 
-\smallskip \newline
-    Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
+\begin{itemize} \setlength\itemsep{5pt}
+    \item Created the developer hub (API documentation and app management) of the Cdiscount openAPI with public access. (\url{http://dev.cdiscount.com})
+    \item Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases). 
+    \item Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
+    \item Started migration to microservices. 
+    \item Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). 
+    \item Trained a junior developer. 
+    \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, git, linux, bower, gulp, karma, jasmine, protractor
+\end{itemize}
 }
-
 \bigskip
 
-\cventry{Summer 2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
-    Sonar integration in the continuous integration process (Jenkins) 
-\smallskip \newline
-    Worked on the core architecture of the project BidRight (Java) 
-\smallskip \newline
-    Created a RESTful API (Java / Jersey) 
-\smallskip \newline
-    Created a scraping web app (Python / Django)
+\cventry{2013--3 Months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
+\begin{itemize} \setlength\itemsep{5pt}
+    \item Sonar integration in the continuous integration process (Jenkins) 
+    \item Worked on the core architecture of the project BidRight (Java) 
+    \item Created a RESTful API (Java / Jersey) 
+    \item Created a scraping web app (Python / Django)
+\end{itemize}
 }
 
 \bigskip
 
 \cventry{2012--2013}{Software Developer - Dual Education}{Cdiscount}{Bordeaux, France}{}{
-    Developed in the web services team on different projects. 
-\smallskip \newline
-    Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
-\smallskip \newline
-    Languages: C\#, SQL Server, Silverlight
-\smallskip \newline
+\begin{itemize} \setlength\itemsep{5pt}
+    \item Developed in the web services team on different projects. 
+    \item Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
+    \item Languages: C\#, SQL Server, Silverlight
+\end{itemize}
 }
 
 \bigskip
 
 \cventry{2012--3 Months}{Web Developer - Internship}{Ecobox}{Bordeaux, France}{}{
-    Developed a Google Map module for Dynmap (cartography software) 
-\smallskip \newline
-    Languages: PHP/MySQL, JavaScript/AJAX
+\begin{itemize} \setlength\itemsep{5pt}
+    \item Developed a Google Map module for Dynmap (cartography software) 
+    \item Languages: PHP/MySQL, JavaScript/AJAX
+\end{itemize}
 }
 
 \section{Education}
 \cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
-    Master's degree, Computer Science Engineering Top School  \\
-    Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
+\begin{itemize} \setlength\itemsep{5pt}
+    \item Master's degree, Computer Science Engineering Top School  
+    \item Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
+\end{itemize}
 }
 
 \bigskip
 
 \cventry{2007--2010}{Trois Mares High School}{}{}{Reunion Island}{
-    High School diploma (French baccalauréat), Science, Engineering Science, with honours \\
-    French equivalent to A Levels
+\begin{itemize} \setlength\itemsep{5pt}
+    \item High School diploma (French baccalauréat), Science, Engineering Science, with honours 
+    \item French equivalent to A Levels
+\end{itemize}
 }
 
 \section{Skills}
@@ -151,10 +148,8 @@
 \cvitem{English}{Full professional proficiency}
 
 \section{Interests}
-\cvitem{IT}{New technologies, coding dojos}
-\cvitem{Others}{Video games, squash, Japanese animation}
-
-% TODO une liste ou 2 ? new technologies ?
+\cvitem{IT}{New technologies, Coding dojos}
+\cvitem{Others}{Video games, Squash, Japanese animation}
 
 \section{References}
 Available upon request
@@ -165,4 +160,3 @@ Available upon request
 %\cvline{hobby 1}{\small Description}
 
 \end{document}
-% TODO polices idem entre \cventry et \cvline ?
