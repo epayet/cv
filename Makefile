@@ -1,19 +1,26 @@
-ALL: cv.pdf
+COMPILE_PROGRAM = pdflatex
+COMPILE_COMMAND = $(COMPILE_PROGRAM) -interaction=errorstopmode -halt-on-error
 
-cv.pdf: out/cv.pdf
-	cp out/cv.pdf cv.pdf
+VERSIONS = $(basename $(notdir $(wildcard versions/*.tex)))
+VERSIONS_OUT = $(addprefix build/,$(wildcard versions/*.tex))
+CVS = $(addprefix cv-,$(addsuffix .pdf,$(VERSIONS)))
+TEX = cv.tex
 
-# Run twice for page numbers
-out/cv.pdf: cv.tex
-	mkdir -p out/
-	pdflatex -output-directory=out cv.tex
-	pdflatex -output-directory=out cv.tex
+all: $(CVS)
 
-clean:
+cv-%.pdf: versions/%.tex $(SCHEMAS_OUT)
+	$(eval $@_NAME := $(notdir $(basename $<)))
+	mkdir -p build/versions
+	cp $< build/$<
+	cp content/* build
+	cd build && \
+	$(COMPILE_COMMAND) --jobname=$($@_NAME) cv.tex && \
+	$(COMPILE_COMMAND) --jobname=$($@_NAME) cv.tex
+	mkdir -p out
+	mv build/$($@_NAME).pdf out/cv-$($@_NAME).pdf
+
+clean: 
+	rm -rf build/
+
+clean_all: clean
 	rm -rf out/
-
-clean-all: clean
-	rm -f cv.pdf
-
-view: cv.pdf
-	xdg-open cv.pdf
