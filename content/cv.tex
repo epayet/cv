@@ -4,6 +4,33 @@
 
 \input{versions/\jobname}
 
+
+% stars rate
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc}
+
+\newcommand\score[1]{
+\pgfmathsetmacro\pgfxa{#1+1}
+\tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw,inner sep=0.15em,anchor=outer point 3]
+\begin{tikzpicture}[baseline]
+  \foreach \i in {1,...,#1} {
+    \pgfmathparse{(\i<=#1?"gray":"gray")}
+    \edef\starcolor{\pgfmathresult}
+    \draw (\i*1em,0) node[name=star\i,scorestars,fill=\starcolor]  {};
+  }
+  \pgfmathparse{(#1>int(#1)?int(#1+1):0}
+  \let\partstar=\pgfmathresult
+  \ifnum\partstar>0
+    \pgfmathsetmacro\starpart{#1-(int(#1))}
+    \path [clip] ($(star\partstar.outer point 3)!(star\partstar.outer point 2)!(star\partstar.outer point 4)$) rectangle 
+    ($(star\partstar.outer point 2 |- star\partstar.outer point 1)!\starpart!(star\partstar.outer point 1 -| star\partstar.outer point 5)$);
+    \fill (\partstar*1em,0) node[scorestars,fill=yellow]  {};
+  \fi
+
+,\end{tikzpicture}
+}
+
+
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
@@ -60,47 +87,45 @@
 
 \begin{document}
 \makecvtitle
-\vspace*{-7mm}
+\vspace*{-14mm}
 
 
 \section{Personal Statement}
-  I am a Software Engineer with 4 years of experience in both front-end and back-end development. \newline
+  I am a Software Engineer with 4 years of experience in full-stack development. \newline
   Used to work in a fast-paced agile environment, I build solid web apps on the cloud.
   \medskip \newline
-  % TODO pas un peu cheesy ca ?
-  Rigorous and enthusiast programmer who can always be trusted to come up with a new approach. \newline
-  Always learning, I'm interested in various technologies that can help build quality code.
-  % I believe in full stack development, language agnostic?
+  I define myself as an enthusiast and language agnostic programmer. \newline
+  I'm looking for a position in front-end and/or back-end development, where I can expand my knowledge.
+
 
 \section{Skills}
-  \cvitem{JavaScript}{\textbf{Expert}: ES5 \& ES6, NodeJS, AngularJS, React, Redux, Webpack, Gulp, Grunt}
-  \cvitem{Agile}{\textbf{Expert}: TDD / BDD, Continuous delivery, Extreme Programming, SCRUM, Kanban}
-  \cvitem{Python}{\textbf{Advanced}: Flask, Django}
-  \cvitem{Java}{\textbf{Advanced}: Version 8, Maven, Gradle, Jersey, JUnit, Hibernate, Groovy, Spock}
-  \cvitem{Ops}{\textbf{Advanced}: Unix shell, Docker, CloudFoundry, Heroku, Codeship, Travis, Jenkins}
-  \cvitem{Database}{\textbf{Advanced}: MongoDB, ElasticSearch, Redis, PostgreSQL, MySQL}
-  \cvitem{Tools}{\textbf{Advanced}: Git, IntelliJ Idea \& derivatives, Vim}
-  \cvitem{Others}{\textbf{Intermediate}: C\#, C/C++, PHP, HTML, CSS}
-  \cvitem{}{\textbf{Beginner}: Go, Ruby}
+  \cvitem{\textbf{Agile}}{\score{5} TDD, Continuous delivery, Extreme Programming, SCRUM, Kanban}
+  \cvitem{\textbf{JavaScript}}{\score{5} ES5 \& ES6, NodeJS, AngularJS, React, Redux, Webpack, Gulp, Grunt}
+  \cvitem{\textbf{Python}}{\score{4}\hspace{1em} Flask, Django}
+  \cvitem{\textbf{Tools}}{\score{4}\hspace{1em} Unix shell, Git, IntelliJ Idea \& derivatives, Vim}
+  \cvitem{\textbf{CSS}}{\score{4}\hspace{1em} Sass}
+  \cvitem{\textbf{Java}}{\score{3}\hspace{2em} Version 8, Maven, Gradle, Jersey, JUnit, Hibernate, Groovy, Spock}
+  \cvitem{\textbf{Ops}}{\score{3}\hspace{2em} Docker, CloudFoundry, Heroku, Codeship, Travis, Jenkins}
+  \cvitem{\textbf{Database}}{\score{3}\hspace{2em} MongoDB, ElasticSearch, Redis, PostgreSQL, MySQL}
+  \cvitem{\textbf{Others}}{\score{2}\hspace{3em} C\#, C/C++, PHP}
+  \cvitem{}{\score{1}\hspace{4em} Go, Ruby}
 
 
-% TODO work close to the business and designers?
 \section{Employment}
-  \cventry{Nov. 2015 \\ Today \\ 1 year}{Software Engineer}{Marks \& Spencer}{London, England}{}{
+  \cventry{Today \\ Nov. 2015 \\ 1 year}{Software Engineer}{Marks \& Spencer}{London, England}{}{
     \begin{itemize} \setlength\itemsep{5pt}
       \item Created CFTO (Christmas Food To Order) website within a medium-size agile team (15 people). \newline
-      This is twelve-factor app running on mulitple cloud providers allowing us to have a high availability. \newline
-      The project was developped internally for the first time this year, and is 25\% ahead of last year in revenue. \newline
+      Twelve-factor app running on mulitple cloud providers allowing us to have a high availability. \newline
+      Project developped internally for the first time this year, and is 25\% ahead of last year in revenue. \newline
       Full-stack development: Python (3.5), Flask, Vanilla JavaScript (ES6), HTML, CSS, progressive enhancement, Cloud Foundry, CodeShip, Concourse \newline
-      Agile techniques: TDD, Pair Programming, Continuous delivery, Kanban Style \newline
       \url{https://christmasfood.marksandspencer.com}
-      \item Refactored and added new features to existing application within a small agile team (4 people). \newline
-      This is a dynamic multistep form to help customers choose their items and have a better conversion. \newline
+      \item Refactored and added new features to an existing application within a small agile team (4 people). \newline
+      Dynamic multistep form to help customers choose their items. Increased conversion. \newline
       Technologies: NodeJS, Angular 1.X, HTML, CSS, Heroku, CodeShip \newline
       \url{https://marksandspencer.com/s/lingerie/be-inspired/bra-fitting-tool}
       \item Started a prototype on the same kind of project but with a more modern web stack: React, Redux, Webpack, Server-side rendering
       \item Started rewriting responsive email templates using open-source tool MJML. \newline
-      It uses React components for a better reusability between email templates and more consistency between email providers.
+      Uses React components for a better reusability between email templates and more consistency between email providers.
       \item 20\% time: Contributing to various open source projects (MJML + personal) \newline
       Learning new programming languages: Ruby, Go \newline
       Conferences and training: Cloud Foundry, AWS, Ruby
@@ -109,35 +134,32 @@
 
   \bigskip
 
-  \cventry{Oct. 2013 \\ Jul. 2015 \\ 2 years}{Software Engineer}{Cdiscount}{Bordeaux, France}{}{
+  \cventry{Jul. 2015 \\ Oct. 2013 \\ 2 years}{Software Engineer}{Cdiscount}{Bordeaux, France}{}{
     \begin{itemize} \setlength\itemsep{5pt}
       \item Created the developer hub of the Cdiscount openAPI, allowing many developers to manage their applications and use the interactive documentation. \newline
       \url{https://dev.cdiscount.com}.
-      \item Developed several internal projects in web technologies (single-page applications, RESTful servers, NoSQL databases), which improved the team productivity.
-      \item Assured the correct implementation of agile methodologies, testing (TDD, integration tests, UI tests, etc.), automation (continuous integration and delivery, docker), and other good development practices (code review, pair programming, constant refactoring, etc.). 
-      \item Started migration to microservices for a better scalability of our applications.
-      \item Active technological monitoring and organization of knowledge sharing workshops (e.g. coding dojos). 
-      \item Trained a junior developer. 
+      \item Developed several internal projects using web technologies (single-page applications, RESTful servers, NoSQL databases), which improved the team productivity.
+      \item Assured the correct implementation of agile methodologies, testing, automation, and good development practices.
+      \item Mentored a junior developer. Organised knowledge sharing workshops (code dojos).
       \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, Git, Linux, Bower, Gulp, Karma, Jasmine, Protractor
     \end{itemize}
   }
 
   \bigskip
 
-  \cventry{Jul. 2013 \\ Sep. 2013 \\ 3 months}{Software Engineer - Internship}{Personalized Software Ltd}{Dublin, Ireland}{}{
+  \cventry{Sep. 2013 \\ Jul. 2013 \\ 3 months}{Software Engineer Intern}{Personalized Software Ltd}{Dublin, Ireland}{}{
     \begin{itemize} \setlength\itemsep{5pt}
       \item Integration of SonarQube™ in the continuous integration process to improve the overall code quality.
-      \item Refactored a part of the core architecture of the project BidRight. It allows users to monitor advertising revenues on different platforms. 
-      \item Created a RESTful API around BidRight using the refactored architecture. \newline
-      This let us the possibility to develop micro-applications around BidRight using other technologies.
-      \item Created a scraping app with a simple dashboard to help keep track of the correct usage of BidRight.
+      \item Refactored a part of the core architecture of the project BidRight. Allows users to monitor advertising revenues on different platforms. 
+      \item Created a RESTful API around BidRight using the refactored architecture.
+      \item Created a scraping app + simple dashboard to check the correct usage of BidRight.
       \item Technologies: Java, Jenkins, Jersey, Python, Django, Mechanize
     \end{itemize}
   }
 
   \bigskip
 
-  \cventry{Sep. 2012 \\ Jul. 2013 \\ 1 year}{Software Developer}{Cdiscount}{Bordeaux, France}{}{
+  \cventry{Jul. 2013 \\ Sep. 2012 \\ 1 year}{Junior Software Engineer}{Cdiscount}{Bordeaux, France}{}{
     \begin{itemize} \setlength\itemsep{5pt}
       \item Developed in the web services team on different projects. 
       \item Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
@@ -147,28 +169,27 @@
 
   \bigskip
 
-  \cventry{Jan. 2012 \\ Mar. 2012 \\ 3 Months}{Web Developer - Internship}{Ecobox}{Bordeaux, France}{}{
+  \cventry{Mar. 2012 \\ Jan. 2012 \\ 3 Months}{Web Developer Intern}{Ecobox}{Bordeaux, France}{}{
     \begin{itemize} \setlength\itemsep{5pt}
-      \item Developed a Google Map module for Dynmap (cartography software), adding benefits for users from both cartography softwares. 
+      \item Developed a Google Map module for Dynmap (cartography software), which combines both software features for users.
       \item Technologies: PHP, MySQL, JavaScript
     \end{itemize}
   }
 
 
 \section{Education}
-  \cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
+  \cventry{2013--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
     \begin{itemize} \setlength\itemsep{5pt}
-        \item Master's degree, Computer Science Engineering Top School  
+        \item Master's degree, Computer Science Engineering  
         \item Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
     \end{itemize}
   }
 
   \bigskip
 
-  \cventry{2007--2010}{Trois Mares High School}{}{}{Reunion Island}{
+  \cventry{2010--2013}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
     \begin{itemize} \setlength\itemsep{5pt}
-      \item High School diploma, Science, Engineering Science, with honours 
-      \item French baccalauréat equivalent to A Levels: Mathematics (A), Physics (A), Chemistry (A)
+        \item Bachelor's degree, Computer Science Engineering - Web
     \end{itemize}
   }
 
@@ -179,20 +200,20 @@
 
 
 \section{Interests}
-  \cvitem{IT}{New technologies, Coding dojos, Game jams}
-  \cvitem{Others}{Video games, Squash, Japanese animation}
+  \cvitem{}{Video games, Japanese animation, Squash}
 
 
 % TODO do I still need this?
-\section{References}
-%Available upon request
-\renewcommand{\listitemsymbol}{} % Changes the symbol used for lists
+% \section{References}
+%   \cvitem{}{Available upon request}
 
-  \cvlistdoubleitem{\textbf{Olivier Abrard}}{\textbf{Grégory Taudin}}
-  \cvlistdoubleitem{Engineering Manager}{Engineering Manager}
-  \cvlistdoubleitem{Former Mentor at Cdiscount}{Former Mentor at Cdiscount}
-  \cvlistdoubleitem{\href{mailto:olivier.abrard@gmail.com}{olivier.abrard@gmail.com}}{\href{mailto:gregory.taudin@gmail.com}{gregory.taudin@gmail.com}}
-  \cvlistitem{+33650974994}  %% This will give only one column
+% \renewcommand{\listitemsymbol}{} % Changes the symbol used for lists
+
+%   \cvlistdoubleitem{\textbf{Olivier Abrard}}{\textbf{Grégory Taudin}}
+%   \cvlistdoubleitem{Engineering Manager}{Engineering Manager}
+%   \cvlistdoubleitem{Former Mentor at Cdiscount}{Former Mentor at Cdiscount}
+%   \cvlistdoubleitem{\href{mailto:olivier.abrard@gmail.com}{olivier.abrard@gmail.com}}{\href{mailto:gregory.taudin@gmail.com}{gregory.taudin@gmail.com}}
+%   \cvlistitem{+33650974994}  %% This will give only one column
 
 %examples
 %\cvlanguage{Language 1}{Skill level}{Comment}
