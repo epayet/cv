@@ -31,9 +31,10 @@
 }
 
 
+% some random config stuff
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
-\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{lastpage}
 \rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
@@ -42,7 +43,7 @@
  
 \usepackage{lmodern}           % charge les polices LatinModern appropriées pour un rendu PDF
 
-\setlength{\hintscolumnwidth}{2.5cm}
+\setlength{\hintscolumnwidth}{2cm}
 
 \usepackage{xpatch}
 
@@ -56,7 +57,7 @@
 % Increase the vertical spacing between the sections
 \makeatletter
 \RenewDocumentCommand{\section}{sm}{%
-  \par\addvspace{0.8cm}%
+  \par\addvspace{1.2cm}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#2}%
   \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
@@ -79,9 +80,10 @@
 \firstname{Emmanuel}
 \familyname{Payet}
 \title{Software Engineer}
-\address{39 Islington Park Street}{Basement}{N1 1QB, London}
+\address{}{}{N7, London}
 \email{contact@emmanuel-payet.me}
 \social[github]{epayet}
+\social[linkedin]{emmanuelpayet}
 % \extrainfo{\FPtrunc\myage{\myage}{0}\myage\ years old}
 
 
@@ -90,106 +92,83 @@
 \vspace*{-14mm}
 
 
-\section{Personal Statement}
-  I am a Software Engineer with 4 years of experience in full-stack development. \newline
-  Used to work in a fast-paced agile environment, I build solid web apps on the cloud.
-  \medskip \newline
-  I define myself as an enthusiast and language agnostic developer. \newline
-  I'm looking for a position in front-end and/or back-end development, where I can expand my knowledge.
+\section{About Me}
+  I am a Software Engineer with 10+ years of experience in building full-stack web applications. \newline
+  In the last 4 years, I've expended my skillsets to line management, team and technical leadership. \newline
+%  \medskip \newline
+  I am a pragmatic engineer who loves empowering other engineers to have impact and grow.
 
 
-\section{Skills}
-  \cvitem{\textbf{Agile}}{\score{5} TDD, Continuous delivery, Extreme Programming, SCRUM, Kanban}
-  \cvitem{\textbf{JavaScript}}{\score{5} ES5 \& ES6, NodeJS, AngularJS, React, Redux, Webpack, Gulp, Grunt}
-  \cvitem{\textbf{Python}}{\score{4}\hspace{1em} Flask, Django}
-  \cvitem{\textbf{Tools}}{\score{4}\hspace{1em} Unix shell, Git, IntelliJ Idea \& derivatives, Vim}
-  \cvitem{\textbf{CSS}}{\score{4}\hspace{1em} Sass}
-  \cvitem{\textbf{Java}}{\score{3}\hspace{2em} Version 8, Maven, Gradle, Jersey, JUnit, Hibernate, Groovy, Spock}
-  \cvitem{\textbf{Ops}}{\score{3}\hspace{2em} Docker, CloudFoundry, Heroku, Codeship, Travis, Jenkins}
-  \cvitem{\textbf{Database}}{\score{3}\hspace{2em} MongoDB, ElasticSearch, Redis, PostgreSQL, MySQL}
-  \cvitem{\textbf{Others}}{\score{2}\hspace{3em} C\#, C/C++, PHP}
-  \cvitem{}{\score{1}\hspace{4em} Go, Ruby}
-
-
-\section{Employment}
-  \cventry{Today \\ Nov. 2015 \\ 1 year}{Software Engineer}{Marks \& Spencer}{London, England}{}{
+\section{Experience}
+  \cventry{Today \\ Apr. 2020 \\ 3+ years}{Technical Lead}{Lyst}{London}{}{
     \begin{itemize} \setlength\itemsep{5pt}
-      \item Created CFTO (Christmas Food To Order) website within a medium-size agile team (15 people). \newline
-      Twelve-factor app running on multiple cloud providers allowing us to have a high availability. \newline
-      Project developed internally for the first time this year, and is 25\% ahead of last year in revenue. \newline
-      Full-stack development: Python (3.5), Flask, Vanilla JavaScript (ES6), HTML, CSS, progressive enhancement, Cloud Foundry, CodeShip, Concourse \newline
+      \item Tech Lead for the Product Data team (8 people). \newline
+      This team is in charge of the data pipeline from downloading data from partners (2000+ partners) to populating the catalogue database (8M+ products).
+      \item Line management of 4 people for them to grow in their career. \newline
+      All the people I manage are now senior engineers and some of them are also engineering managers and tech leads.
+      \item Working in collaboration with multiple teams on various projects to improve integration efficiency and data accuracy resulting in a better user experience.
+      \item Technologies: Python, AWS Services (SQS, Kinesis, EKS, S3, RDS/Aurora, \ldots)
+    \end{itemize}
+  }
+
+  \bigskip \bigskip
+
+  \cventry{Apr. 2020 \\ Apr. 2019 \\ 1 year}{Senior Software Engineer}{Lyst}{London}{}{
+    \begin{itemize} \setlength\itemsep{5pt}
+      \item Worked with data scientists to productionise new machine learning models. \newline
+      This now covers 80\% of our new incoming products, reducing the cost of manual categorisation by \$1M per year.
+      \item Added brand-new product category (face masks) in the internal taxonomy for the first time in 10 years, automatically categorised. \newline
+      The timing was important for the company and this was added quickly.
+      \item Finished product data migration from the monolith to the use the new catalogue microservice.
+      This was a large tech debt piece involving working with other teams.
+      \item Technologies: Python, Django, Flask, PostgreSQL, DynamoDB
+    \end{itemize}
+  }
+
+  \bigskip \bigskip
+
+  \cventry{Apr. 2019 \\ Jun. 2017 \\ 2 years}{Software Engineer}{Lyst}{London}{}{
+    \begin{itemize} \setlength\itemsep{5pt}
+      \item Made the catalogue international and multi-currencies, helping Lyst launch in more markets (Japan, Russia, etc.).
+      Worked across the full stack to make it happen.
+      \item Added an internal dashboard to interact with our catalogue API.
+      \item Technologies: Python, Django, JavaScript, NodeJS, React, Redux
+    \end{itemize}
+  }
+
+  \bigskip \bigskip
+
+  \cventry{Jun. 2017 \\ Nov. 2015 \\ 2 years}{Software Engineer}{Marks \& Spencer}{London}{}{
+    \begin{itemize} \setlength\itemsep{5pt}
+      \item Created CFTO (Christmas Food To Order) website within a large multidisciplinary agile team (15 people). \newline
+      12-factor app running on multiple cloud providers allowing high availability. \newline
       \url{https://christmasfood.marksandspencer.com}
-      \item Refactored and added new features to an existing application within a small agile team (4 people). \newline
-      Dynamic multistep form to help customers choose their items. Increased conversion. \newline
-      Technologies: NodeJS, Angular 1.X, HTML, CSS, Heroku, CodeShip \newline
-      \url{https://marksandspencer.com/s/lingerie/be-inspired/bra-fitting-tool}
-      \item Started a prototype on the same kind of project but with a more modern web stack: React, Redux, Webpack, Server-side rendering
-      \item Started rewriting responsive email templates using open-source tool MJML. \newline
-      Uses React components for a better reusability between email templates and more consistency between email providers.
-      \item 20\% time: Contributing to various open source projects (MJML + personal) \newline
-      Learning new programming languages: Ruby, Go \newline
-      Conferences and training: Cloud Foundry, AWS, Ruby
+      \item Rewrote responsive email templates using open-source tool MJML. \newline
+      Uses React components for a better reusability between email templates and more consistency between email providers. \newline
+      This included contributing to the open-source project MJML.
+      \item Technologies: Python, Flask, JavaScript, NodeJS, AngularJS, React, HTML, CSS, Progressive Enhancement, Heroku, Cloud Foundry, CodeShip, Concourse \newline
     \end{itemize}
   }
 
-  \bigskip
+  \bigskip \bigskip
 
-  \cventry{Jul. 2015 \\ Oct. 2013 \\ 2 years}{Software Engineer}{Cdiscount}{Bordeaux, France}{}{
+  \cventry{Sep. 2015 \\ Sep. 2012 \\ 3 years}{Software Engineer}{Cdiscount}{Bordeaux}{}{
     \begin{itemize} \setlength\itemsep{5pt}
-      \item Created the developer hub of the Cdiscount openAPI, allowing many developers to manage their applications and use the interactive documentation. \newline
-      \url{https://dev.cdiscount.com}.
-      \item Developed several internal projects using web technologies (single-page applications, RESTful servers, NoSQL databases), which improved the team productivity.
-      \item Assured the correct implementation of agile methodologies, testing, automation, and good development practices.
-      \item Mentored a junior developer. Organised knowledge sharing workshops (code dojos).
-      \item Technologies: OO JavaScript (ES6), AngularJS, NodeJS, MongoDB, Java, Kafka, Docker, Jenkins, Git, Linux, Bower, Gulp, Karma, Jasmine, Protractor
-    \end{itemize}
-  }
-
-  \bigskip
-
-  \cventry{Sep. 2013 \\ Jul. 2013 \\ 3 months}{Software Engineer Intern}{Personalized Software Ltd}{Dublin, Ireland}{}{
-    \begin{itemize} \setlength\itemsep{5pt}
-      \item Integration of SonarQube™ in the continuous integration process to improve the overall code quality.
-      \item Refactored a part of the core architecture of the project BidRight. Allows users to monitor advertising revenues on different platforms. 
-      \item Created a RESTful API around BidRight using the refactored architecture.
-      \item Created a scraping app + simple dashboard to check the correct usage of BidRight.
-      \item Technologies: Java, Jenkins, Jersey, Python, Django, Mechanize
-    \end{itemize}
-  }
-
-  \bigskip
-
-  \cventry{Jul. 2013 \\ Sep. 2012 \\ 1 year}{Junior Software Engineer}{Cdiscount}{Bordeaux, France}{}{
-    \begin{itemize} \setlength\itemsep{5pt}
-      \item Developed in the web services team on different projects. 
-      \item Created an internal application of web service monitoring (SOAP / REST) to ease management and use of web services on different environments (production, dev, etc.), which improved the team productivity. 
-      \item Technologies: C\#, SQL Server, Silverlight
-    \end{itemize}
-  }
-
-  \bigskip
-
-  \cventry{Mar. 2012 \\ Jan. 2012 \\ 3 Months}{Web Developer Intern}{Ecobox}{Bordeaux, France}{}{
-    \begin{itemize} \setlength\itemsep{5pt}
-      \item Developed a Google Map module for Dynmap (cartography software), which combines both software features for users.
-      \item Technologies: PHP, MySQL, JavaScript
+      \item Created the developer hub of the Cdiscount openAPI, allowing many developers to manage their applications and use the interactive documentation.
+      \item Added features to the Catalog as part of the service team.
+      \item Worked on internal web service monitoring tools (SOAP) to easily swap between environments, improving the team productivity.
+      \item Mentored junior developers.
+      \item Organised knowledge sharing workshops (code dojos).
+      \item Technologies: C\#, SQLServer, JavaScript, AngularJS, NodeJS, MongoDB, Jenkins
     \end{itemize}
   }
 
 
 \section{Education}
-  \cventry{2013--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
+  \cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
     \begin{itemize} \setlength\itemsep{5pt}
-        \item Master's degree, Computer Science Engineering  
-        \item Relevant Modules: Web, Mobile, NoSQL, SOA, Agile Methodology, Software Architecture, Linux, AI, C/C++, Java, 3D
-    \end{itemize}
-  }
-
-  \bigskip
-
-  \cventry{2010--2013}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
-    \begin{itemize} \setlength\itemsep{5pt}
-        \item Bachelor's degree, Computer Science Engineering - Web
+        \item Master's degree, Computer Science Engineering
+        \item Bachelor's degree, Computer Science Engineering
     \end{itemize}
   }
 
@@ -200,10 +179,9 @@
 
 
 \section{Interests}
-  \cvitem{}{Video games, Japanese animation, Squash}
+  \cvitem{}{Kung Fu (6 years, Blue Belt), Squash, Video games, Japanese animation}
 
 
-% TODO do I still need this?
 % \section{References}
 %   \cvitem{}{Available upon request}
 
