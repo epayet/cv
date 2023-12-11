@@ -1,4 +1,9 @@
 \documentclass[11pt,a4paper]{moderncv}
+
+% define a new blue color. this is used to change the colors of the section titles and the horizontal bar. could be done better maybe?
+\usepackage{xcolor}
+\definecolor{deep-blue}{HTML}{0053d6}
+
 \moderncvtheme[blue]{classic}
 %\moderncvtheme[black]{banking}
 
@@ -60,7 +65,7 @@
   \par\addvspace{1.2cm}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#2}%
-  \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
+  \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{deep-blue}\rule{\hintscolumnwidth}{0.95ex}}}%
   \hspace{\separatorcolumnwidth}%
   \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#2}}%
   \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
@@ -92,14 +97,14 @@
 \vspace*{-14mm}
 
 
-\section{About Me}
+\section{\color{deep-blue} About Me}
   I am a Software Engineer with 10+ years of experience in building full-stack web applications. \newline
   In the last 4 years, I've expended my skillsets to line management, team and technical leadership. \newline
 %  \medskip \newline
   I am a pragmatic engineer who loves empowering other engineers to have impact and grow.
 
 
-\section{Experience}
+\section{\color{deep-blue} Experience}
   \cventry{Today \\ Apr. 2020 \\ 3+ years}{Technical Lead}{Lyst}{London}{}{
     \begin{itemize} \setlength\itemsep{5pt}
       \item Tech Lead for the Product Data team (8 people). \newline
@@ -164,7 +169,7 @@
   }
 
 
-\section{Education}
+\section{\color{deep-blue} Education}
   \cventry{2010--2015}{EPSI (École Privée des Sciences Informatiques)}{}{}{Bordeaux, France}{
     \begin{itemize} \setlength\itemsep{5pt}
         \item Master's degree, Computer Science Engineering
@@ -173,16 +178,16 @@
   }
 
 
-\section{Languages}
+\section{\color{deep-blue} Languages}
   \cvitem{French}{Native}
   \cvitem{English}{Fluent}
 
 
-\section{Interests}
+\section{\color{deep-blue} Interests}
   \cvitem{}{Kung Fu (6 years, Blue Belt), Squash, Video games, Japanese animation}
 
 
-% \section{References}
+% \section{\color{deep-blue} References}
 %   \cvitem{}{Available upon request}
 
 % \renewcommand{\listitemsymbol}{} % Changes the symbol used for lists
