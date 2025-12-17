@@ -1,0 +1,34 @@
+docker run --rm -it -v $PWD:/source --entrypoint bash pandoc/extra:latest-ubuntu    
+
+    1  make
+    2  sudo apt-get install make
+    3  apt-get install make
+    4  make
+    5  ls
+    6  cd /source
+    7  ls
+    8  make
+    9  cat Makefile
+   10  make test.pdf
+   11  make
+   12  apt update
+   13  apt install texlive-latex-extra texlive-fonts-extra
+   14  make
+   15  kpsewhich modercv.cls
+   16  apt install texlive-full
+   17  kpsewhich modercv.cls
+   18  make
+   19  mktexlsr
+   20  kpsewhich modercv.cls
+   21  apt-file search moderncv.cls
+   22  apt file search moderncv.cls
+   23  apt install apt-file
+   24  apt-file search moderncv.cls
+   25  apt-file update
+   26  apt-file search moderncv.cls
+   27  kpsewhich modercv.cls
+   28  which kpsewhich
+   29  kpsewhich moderncv.cls
+   30  PATH=/usr/bin:$PATH kpsewhich moderncv.cls
+   31  PATH=/usr/bin:$PATH make
+   32  history

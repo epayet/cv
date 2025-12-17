@@ -1,0 +1,35 @@
+# BEFORE: FROM sthysel/latex
+# NEW: Use the official Pandoc image that includes a full LaTeX distribution,
+# built on a stable Ubuntu base for easy package management.
+FROM pandoc/extra:latest-ubuntu
+
+# The original image was based on an old Debian Jessie.
+# We'll stick to the Ubuntu base's package manager (apt-get)
+# and install the extra tools you added.
+
+# Note: The 'locales' step is often not needed on modern base images.
+# We will use the base image's already configured locale.
+
+RUN apt-get update && \
+    apt-get install -y \
+        make \
+        ttf-mscorefonts-installer \
+        # Includes moderncv.cls (or most likely contains it)
+        texlive-full \
+        texlive-publishers \
+        dia \
+        gnumeric \
+        inkscape \
+        biber \
+        file \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Environment variables and working directory remain the same
+# as they were likely critical to your workflow.
+# ENV LANG C.UTF-8  # Already set in the base image
+# ENV LC_CTYPE C.UTF-8 # Already set in the base image
+
+WORKDIR /source
+CMD make
